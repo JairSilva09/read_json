@@ -16,45 +16,19 @@
         </div>
     </div>
     <script>
-
+        
         function read(){
-            let contenedor = document.getElementById("main")
-
-            data.results.forEach((a) =>{
-
-                let parrafo = document.createElement("p")
-                let contParrafo = document.createTextNode(a.name)
-                parrafo.appendChild(contParrafo)
-                contenedor.append(parrafo)
-
-                //contenedor.innerHTML ='<p>'+ a.name+'</p>';
-                
-            })
-            
-        }
-
-        let data = {    
-          
-                "results": [{
-                    "name": "bulbasaur",
-                    "url": "https://pokeapi.co/api/v2/pokemon/1/"
-                }, {
-                    "name": "ivysaur",
-                    "url": "https://pokeapi.co/api/v2/pokemon/2/"
-                }, {
-                    "name": "venusaur",
-                    "url": "https://pokeapi.co/api/v2/pokemon/3/"
-                }, {
-                    "name": "charmander",
-                    "url": "https://pokeapi.co/api/v2/pokemon/4/"
-                }, {
-                    "name": "charmeleon",
-                    "url": "https://pokeapi.co/api/v2/pokemon/5/"
-                }, {
-                    "name": "charizard",
-                    "url": "https://pokeapi.co/api/v2/pokemon/6/"
-                }]
+            const xhttp = new XMLHttpRequest();
+            xhttp.open('GET','https://davidwalsh.name/demo/arsenal.json',true);
+       
+            xhttp.send();
+            xhttp.onreadystatechange = function (){
+                if(this.readyState == 4 && this.status == 200){
+                    console.log(this.responseText)
+                }
             }
+        }
+      
     
     </script>    
 </body>
