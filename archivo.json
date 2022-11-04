@@ -1,12 +1,15 @@
- 
+  
 [
 
     {
-            "name":"John", "age":30, "city":"New York"
+        "name":"John", "age":30, "city":"New York"
     },
 
     {
-            "name":"Hans", "age":31, "city":"San Francisco"
+        "name":"Hans", "age":31, "city":"San Francisco"
+    },
+    {
+        "name":"Angelina", "age":27, "city":"Boston"
     }
 ]  
 
@@ -14,6 +17,10 @@
 
 
     
+
+
+
+
 
 
 

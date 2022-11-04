@@ -18,13 +18,33 @@
     <script>
         
         function read(){
+            const container = document.getElementById("main");
             const xhttp = new XMLHttpRequest();
-            xhttp.open('GET','https://davidwalsh.name/demo/arsenal.json',true);
+            xhttp.open('GET','http://localhost/read%20json/archivo.json',true);
        
             xhttp.send();
             xhttp.onreadystatechange = function (){
                 if(this.readyState == 4 && this.status == 200){
-                    console.log(this.responseText)
+                    let data = JSON.parse(this.responseText)
+                    data.forEach((a)=>{
+                        let parrafo1 = document.createElement("p");
+                        let nombre = document.createTextNode(a.name);
+                        let parrafo2 = document.createElement("p");
+                        let age = document.createTextNode(a.age);
+                        let parrafo3 = document.createElement("p");
+                        let city = document.createTextNode(a.city);
+                        let hr = document.createElement("hr");
+                  
+                        parrafo1.appendChild(nombre)
+                        parrafo2.appendChild(age)
+                        parrafo3.appendChild(city)
+                        container.append(parrafo1)
+                        container.append(parrafo2)
+                        container.append(parrafo3)
+                        container.append(hr)
+                        
+                    })
+                    
                 }
             }
         }
